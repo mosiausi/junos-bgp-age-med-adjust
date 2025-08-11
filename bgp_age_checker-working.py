@@ -71,7 +71,7 @@ def main():
             print(f"{prefix}: Older from {max_nbr} ({ages[max_nbr]} sec) vs {min_nbr} ({ages[min_nbr]} sec)")
             print(f"set policy-options policy-statement AUTO-MED term {term_num} from neighbor {max_nbr}")
             print(f"set policy-options policy-statement AUTO-MED term {term_num} from route-filter {prefix} exact")
-            print(f"set policy-options policy-statement AUTO-MED term {term_num} then reject\n")
+            print(f"set policy-options policy-statement AUTO-MED term {term_num} then metric 555\n")
             term_num += 1
 
     print("set policy-options policy-statement AUTO-MED then default-action accept")
